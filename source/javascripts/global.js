@@ -1,3 +1,4 @@
+(function() {
 var classes = (function(){
 	var add = function( el, className, force ) {
 		if ( force || !has( el, className ) ) el.className += ' ' + className
@@ -79,15 +80,6 @@ var addEvent = (function() {
 	return add
 }());
 
-// phone toggle nav
-(function() {
-	var toggleNav = function ( e ) {
-		classes.toggle( document.body, 'naving' )
-	}
-
-	addEvent( document.getElementById( 'page-nav' ), 'click', toggleNav )
-}());
-
 // nav fixer
 (function() {
 	var onScroll = function() {
@@ -104,4 +96,5 @@ var addEvent = (function() {
 		addEvent( window, 'scroll', onScroll )
 	}
 
+}());
 }());
