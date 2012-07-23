@@ -1,3 +1,9 @@
+if ( !String.prototype.trim ) {
+	String.prototype.trim = function () {
+		return this.replace( /^\s+|\s+$/g, '' )
+	}
+}
+
 var classes = (function(){
 	var add = function( el, className, force ) {
 		if ( force || !has( el, className ) ) el.className += ' ' + className
@@ -14,7 +20,7 @@ var classes = (function(){
 			if ( force || has( el, className ) ) {
 				re = RegExp( '\\b' + className + '\\b' )
 
-				el.className = el.className.replace(re, '')
+				el.className = el.className.replace(re, '').trim()
 			}
 		},
 		toggle = function( el, className ) {
