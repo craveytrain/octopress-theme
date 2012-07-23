@@ -97,7 +97,7 @@ var addEvent = (function() {
 // nav fixer
 (function() {
 	var onScroll = function() {
-			if ( window.scrollY > 240 ) {
+			if ( ( window.scrollY || window.pageYOffset ) > 240 ) {
 				classes.add( navBar, 'fixed' )
 			} else {
 				classes.remove( navBar, 'fixed' )
